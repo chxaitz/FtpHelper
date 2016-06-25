@@ -38,6 +38,6 @@
         }
     /*异步上传与下载*/
     /*注意：每一个异步下载都会创建一个FtpHelper.FtpConnect，从而导致同时下载的文件越多，就会在Ftp Server端看到有多个user同时登陆下载，这对于Ftp Server端有同时登陆人数限制的时候，会导致下载失败，现有的代码，还没有做同时下载文件数量的限制和速度的限制，并且近期，可能也不打算更新这部分代码，因为我感觉够用了~O(∩_∩)O哈哈~*/
-    string guid = FtpHelperHandler.DownloadFileAsync(ftp_name, local_path );
-    string guid = this.FtpHelperHandler.UploadFileAsync(fi.FullName, fi.Name);
+    string guid = this._ftphelper.DownloadFileAsync(ftp_name, local_path );
+    string guid = this._ftphelper.UploadFileAsync(fi.FullName, fi.Name);
 ---
