@@ -2,23 +2,23 @@
 一个C#写的Ftp Client的类，通过对网上现有资源的整合，修改，个人感觉还是蛮好用的。
 
 ##四个类
-1.FtpHelper类 主类
-2.FtpHelper.FtpConnect类 连接类，每个类，维护一个到Ftp Server的连接，一个FtpHelper可以有多个FtpConnect
-3.FtpHelper.FtpFileInfo类 Ftp文件信息类，里面存储了，Ftp文件的信息，可以说是Ftp版的FileInfo
-4.FtpHelper.FtpUrl类 每个FtpConnect有一个Url，用来维护FtpConnect连接的地址
+> * FtpHelper类 主类
+> * FtpHelper.FtpConnect类 连接类，每个类，维护一个到Ftp Server的连接，一个FtpHelper可以有多个FtpConnect
+> * FtpHelper.FtpFileInfo类 Ftp文件信息类，里面存储了，Ftp文件的信息，可以说是Ftp版的FileInfo
+> * FtpHelper.FtpUrl类 每个FtpConnect有一个Url，用来维护FtpConnect连接的地址
 
 ##优点
-1.支持多线程
-2.支持异步
-3.支持进度
+> * 支持多线程
+> * 支持异步
+> * 支持进度
 
 ##注意事项
-1.在FtpHelper中有Directory和Folder的概念，一个Folder只表示一层文件夹，而Directory则可以表示多层文件夹。
+> * 在FtpHelper中有Directory和Folder的概念，一个Folder只表示一层文件夹，而Directory则可以表示多层文件夹。
 比如 Folder=目录1 Directory=/目录1/目录2
 
 ##示例代码
 
----
+---C#
     this._ftphelper = new FtpHelper(new Uri("ftp://127.0.0.1:21"), "root", "password");
     /*添加事件*/
     this._ftphelper.FtpError += Ftphelper_FtpError;
